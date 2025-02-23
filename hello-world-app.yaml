@@ -7,7 +7,7 @@ spec:
   project: default
   containers:
     - name: hello-world-app
-      image: yourdockerhubusername/hello-world-app:latest  # Update this image reference!
+      image: anoopri/hello-world-app:latest  # Update this image reference!
       ports:
         - containerPort: 3000
   
