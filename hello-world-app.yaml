@@ -5,21 +5,16 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  containers:
-    - name: hello-world-app
-      image: anoopri/hello-world-app:latest  # Update this image reference!
   source:
     repoURL: https://github.com/Starap3007/argodeploy.git
     targetRevision: HEAD
-    path: .
-  destination: 
+    path: .  # Path to the directory containing the Deployment YAML
+  destination:
     server: https://kubernetes.default.svc
     namespace: hello-world-app
-
   syncPolicy:
     syncOptions:
-    - CreateNamespace=true
-
+      - CreateNamespace=true
     automated:
       selfHeal: true
       prune: true
