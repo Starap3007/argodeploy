@@ -5,6 +5,12 @@ metadata:
   namespace: argocd
 spec:
   project: default
+  containers:
+    - name: hello-world-app
+      image: yourdockerhubusername/hello-world-app:latest  # Update this image reference!
+      ports:
+        - containerPort: 3000
+  
 
   source:
     repoURL: https://github.com/Starap3007/argodeploy.git
